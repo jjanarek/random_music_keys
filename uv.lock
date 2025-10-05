@@ -217,23 +217,25 @@ source = { virtual = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "jinja2" },
-    { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
-lint = [
+dev = [
     { name = "ruff" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.117.1" },
     { name = "jinja2", specifier = ">=3.1.6" },
-    { name = "uvicorn", specifier = ">=0.37.0" },
 ]
 
 [package.metadata.requires-dev]
-lint = [{ name = "ruff", specifier = ">=0.13.3" }]
+dev = [
+    { name = "ruff", specifier = ">=0.13.3" },
+    { name = "uvicorn", specifier = ">=0.37.0" },
+]
 
 [[package]]
 name = "sniffio"
