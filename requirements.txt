@@ -4,8 +4,14 @@ annotated-types==0.7.0
     # via pydantic
 anyio==4.11.0
     # via starlette
+click==8.3.0
+    # via uvicorn
+colorama==0.4.6 ; sys_platform == 'win32'
+    # via click
 fastapi==0.117.1
     # via simple-webpage
+h11==0.16.0
+    # via uvicorn
 idna==3.10
     # via anyio
 jinja2==3.1.6
@@ -28,3 +34,5 @@ typing-extensions==4.15.0
     #   typing-inspection
 typing-inspection==0.4.1
     # via pydantic
+uvicorn==0.37.0
+    # via simple-webpage
