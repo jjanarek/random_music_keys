@@ -221,7 +221,7 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-lint = [
+dev = [
     { name = "ruff" },
 ]
 
@@ -233,7 +233,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-lint = [{ name = "ruff", specifier = ">=0.13.3" }]
+dev = [{ name = "ruff", specifier = ">=0.13.3" }]
 
 [[package]]
 name = "sniffio"
