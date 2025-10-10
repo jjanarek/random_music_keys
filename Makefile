@@ -1,4 +1,4 @@
-.PHONY: format sync clean
+.PHONY: format sync clean run
 
 format:
 	uv run ruff format .
@@ -10,3 +10,6 @@ sync:
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 	rm -rf .pytest_cache
+
+run:
+	uv run python -m uvicorn app:app --reload

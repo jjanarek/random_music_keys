@@ -2,10 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Random Keys Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <style>
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
         .main-wrapper {
             max-width: calc(4 * 200px + 3 * 15px);
             margin: 0 auto;
@@ -82,25 +89,29 @@
 </head>
 
 <body class="p-4">
-    <div class="main-wrapper mx-auto">
-        <div class="header-form-wrapper">
-            <h1>Random Keys Generator</h1>
+<div class="main-wrapper mx-auto">
+    <div class="header-form-wrapper">
+        <h1>Random Keys Generator</h1>
 
-            <form id="generator-form">
-                <input type="number" class="form-control form-control-sm" id="bars" name="bars" min="1" max="24"
-                    required placeholder="Number of bars" />
-                <button type="submit" class="btn btn-primary generate-btn">
-                    Generate!
-                </button>
-            </form>
-
-            <div class="tiles-wrapper">
-                <div id="tiles-container"></div>
-            </div>
+        <form id="generator-form">
+            <input type="number" class="form-control form-control-sm" id="bars" name="bars" min="1" max="24"
+                   required placeholder="Number of bars"/>
+        </form>
+        <div class="buttons-container">
+            <button type="submit" form="generator-form" class="btn btn-primary generate-btn">
+                Generate!
+            </button>
+            <button onclick="window.location.href='/'" class="btn btn-secondary generate-btn">Go to Main Page</button>
         </div>
-    </div>
+        <div class="tiles-wrapper">
+            <div id="tiles-container"></div>
+        </div>
 
-    <script src="/random_keys/static/random_keys.js"></script>
+    </div>
+</div>
+
+<script src="/random_keys/static/random_keys.js"></script>
+
 </body>
 
 </html>
