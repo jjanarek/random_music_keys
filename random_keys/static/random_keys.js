@@ -16,7 +16,7 @@ document.getElementById("generator-form").addEventListener("submit", async (e) =
 };
 
   const bars = document.getElementById("bars").value;
-  const response = await fetch("/generate-keys", {
+  const response = await fetch("random_keys/generate-keys", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ bars })
