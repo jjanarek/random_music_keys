@@ -1,0 +1,32 @@
+.metronome-container {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 450px;
+}
+
+.metronome-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bpm-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#beat-indicator {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    transition: background-color 0.05s ease-in-out;
+}
+
+#beat-indicator.active {
+    background-color: #dc3545;
+}

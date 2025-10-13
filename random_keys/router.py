@@ -2,10 +2,10 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 
-from .generator import generatae_keys
+from .generator import generate_keys
 
 router = APIRouter(prefix="/random_keys")
-templates = Jinja2Templates(directory="random_keys/templates")
+templates = Jinja2Templates(directory=["random_keys/templates", "templates"])
 
 
 @router.get("", response_class=HTMLResponse)
@@ -18,7 +18,7 @@ async def keys_page(request: Request):
 async def generate(data: dict):
     try:
         bars = int(data.get("bars"), 0)
-        keys = generatae_keys(bars)
+        keys = generate_keys(bars)
 
     except (ValueError, TypeError):
         raise HTTPException(
