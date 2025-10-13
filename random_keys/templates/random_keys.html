@@ -85,6 +85,39 @@
             width: 100%;
             max-width: 200px;
         }
+        .metronome-container {
+            margin-top: 20px;
+            margin-bottom: 30px; /* Adds space below the metronome */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 400px; /* Makes the container narrower */
+        }
+
+        .metronome-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bpm-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #beat-indicator {
+            width: 25px;
+            height: 25px;
+            /* margin-top removed as flexbox handles alignment */
+            border-radius: 50%;
+            background-color: #6c757d; /* Bootstrap secondary color */
+            transition: background-color 0.05s ease-in-out;
+        }
+
+        #beat-indicator.active {
+            background-color: #dc3545; /* Bootstrap danger color */
+        }
     </style>
 </head>
 
@@ -92,7 +125,7 @@
 <div class="main-wrapper mx-auto">
     <div class="header-form-wrapper">
         <h1>Random Keys Generator</h1>
-
+        {% include 'components/metronome.html' %}
         <form id="generator-form">
             <input type="number" class="form-control form-control-sm" id="bars" name="bars" min="1" max="24"
                    required placeholder="Number of bars"/>
@@ -111,6 +144,8 @@
 </div>
 
 <script src="/random_keys/static/random_keys.js"></script>
+<script src="{{ url_for('static', path='/js/metronome.js') }}"></script>
+
 
 </body>
 

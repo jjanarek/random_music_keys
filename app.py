@@ -7,7 +7,7 @@ from random_keys import router as random_keys_router
 
 app = FastAPI()
 
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount(
     "/random_keys/static",
     StaticFiles(directory="random_keys/static"),
